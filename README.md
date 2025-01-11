@@ -1,5 +1,5 @@
 > [!NOTE]
-> Only For Termux User (Android) 
+> Only For Termux User (Android) support arm, arm64, x86 and x86_64
 
 ## Installing Python
 ```bash
