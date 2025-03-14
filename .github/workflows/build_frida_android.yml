@@ -28,13 +28,8 @@ jobs:
       id: setup-ndk
       uses: nttld/setup-ndk@main
       with:
-        ndk-version: r25c
+        ndk-version: r25b
         add-to-path: false
-
-    - name: Setup python
-      uses: actions/setup-python@main
-      with:
-        python-version: '3.12'
 
     - name: add ANDROID_NDK_ROOT to environment
       run: |
