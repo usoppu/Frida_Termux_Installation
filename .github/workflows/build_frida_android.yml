@@ -43,7 +43,7 @@ jobs:
     - name: Clone frida repository
       shell: bash
       run: |
-        git clone -b 16.5.7 --recurse-submodules https://github.com/frida/frida
+        git clone --recurse-submodules https://github.com/frida/frida
 
     - name: Configure
       run: cd frida && >-
