@@ -43,7 +43,7 @@ curl -L -o "$DEVKIT_FILE" "$DEVKIT_URL"
 mkdir -p devkit && tar -xJvf "$DEVKIT_FILE" -C devkit
 
 # Clone and install Frida Python
-git clone https://github.com/AbhiTheModder/frida-python frida-python-android
+git clone --branch 16.2.1 --depth 1 https://github.com/frida/frida-python.git
 
 cd frida-python-android
 
