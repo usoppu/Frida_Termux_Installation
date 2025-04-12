@@ -45,6 +45,13 @@ mkdir -p devkit && tar -xJvf "$DEVKIT_FILE" -C devkit
 # Clone and install Frida Python
 git clone --branch 16.2.1 --depth 1 https://github.com/frida/frida-python.git
 
+# fix setup.py
+sed -i '77s|"src", "_frida.version"|"frida/_frida", "extension.version"|' frida-python/setup.py
+sed -i '137s|_frida|frida._frida|' frida-python/setup.py
+sed -i '138s|_frida|frida._frida|' frida-python/setup.py
+sed -i '141s|_frida|frida._frida|' frida-python/setup.py
+sed -i '142s|"src/_frida.c"|"frida/_frida/extension.c"|' frida-python/setup.py
+
 cd frida-python
 
 FRIDA_VERSION="$FRIDA_VERSION" FRIDA_CORE_DEVKIT="$PWD/../devkit" pip install --force-reinstall .
