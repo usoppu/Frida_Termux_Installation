@@ -45,6 +45,6 @@ mkdir -p devkit && tar -xJvf "$DEVKIT_FILE" -C devkit
 # Clone and install Frida Python
 git clone --branch 16.2.1 --depth 1 https://github.com/frida/frida-python.git
 
-cd frida-python-android
+cd frida-python
 
 FRIDA_VERSION="$FRIDA_VERSION" FRIDA_CORE_DEVKIT="$PWD/../devkit" pip install --force-reinstall .
