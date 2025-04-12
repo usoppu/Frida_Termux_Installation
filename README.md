@@ -11,4 +11,4 @@ cd $TMPDIR && wget https://raw.githubusercontent.com/Alexjr2/Frida_Termux_Instal
 ```
 # Credits
 - [frida](https://github.com/frida/frida) : Official Frida Repository
-- [frida-python](https://github.com/frida/frida-python/tree/ebd797e4bc248b8d895d68ebf244a34744cb3ea9) : For frida-python installation and script
+- [frida-python](https://github.com/frida/frida-python/tree/16.2.1) : For frida-python installation and script
