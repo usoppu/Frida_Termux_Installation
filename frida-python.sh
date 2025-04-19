@@ -34,7 +34,7 @@ pkg i -y python git curl && pip install -U setuptools
 FRIDA_VERSION=$(curl --silent "https://api.github.com/repos/Alexjr2/Frida_Termux_Installation/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 # Download Frida devkit
-DEVKIT_URL="https://github.com/Alexjr2/Frida_Termux_Installation/releases/download/$FRIDA_VERSION/frida-core-devkit-android-$arch.tar.xz"
+DEVKIT_URL="https://github.com/Alexjr2/Frida_Termux_Installation/releases/latest/download/frida-core-devkit-android-$arch.tar.xz"
 DEVKIT_FILE="frida-core-devkit-android-$arch.tar.xz"
 
 curl -L -o "$DEVKIT_FILE" "$DEVKIT_URL"
