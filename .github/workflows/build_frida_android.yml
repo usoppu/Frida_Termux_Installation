@@ -2,10 +2,6 @@ name: "Build Frida for Android"
 
 on:
   workflow_dispatch:
-   inputs:
-    FRIDA_VERSION:
-      description: 'FRIDA_VERSION'
-      required: true
 
 permissions:
   contents: write
@@ -39,6 +35,11 @@ jobs:
     - name: Create temp release
       run: |
         mkdir release-assets
+
+    - name: Get latest FRIDA_VERSION from Release
+      id: get_frida_version
+      run: |
+         echo "FRIDA_VERSION=$(curl -s https://api.github.com/repos/frida/frida/releases/latest | jq -r .tag_name)" >> $GITHUB_OUTPUT
 
     - name: Clone frida repository
       shell: bash
@@ -95,7 +96,7 @@ jobs:
     - name: Create release frida ${{ matrix.arch }}
       uses: ncipollo/release-action@main
       with:
-        tag: ${{ github.event.inputs.FRIDA_VERSION }}
-        name: "Frida ${{ github.event.inputs.FRIDA_VERSION }}"
+        tag: ${{ steps.get_frida_version.outputs.FRIDA_VERSION }}
+        name: "Frida ${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
         allowUpdates: true
         artifacts: release-assets/*
