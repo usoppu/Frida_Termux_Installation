@@ -59,8 +59,10 @@ jobs:
           -Dfrida-gum:database=disabled
           -Dfrida-gum:frida_objc_bridge=disabled
           -Dfrida-gum:frida_swift_bridge=disabled
+          -Dfrida-gum:frida_java_bridge=enabled
           -Dfrida-core:devkits=core
           -Dfrida-core:connectivity=disabled
+          -Dfrida-core:mapper=enabled
 
     - name: Compile frida 
       run: cd frida && make && make install
