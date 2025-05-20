@@ -54,7 +54,6 @@ jobs:
           --
           -Dfrida-gum:devkits=gum,gumjs
           -Dfrida-gum:jailbreak=disabled
-          -Dfrida-gum:frida_java_bridge=enabled
           -Dfrida-gum:gumpp=disabled
           -Dfrida-gum:gumjs=enabled
           -Dfrida-gum:v8=disabled
