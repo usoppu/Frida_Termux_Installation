@@ -43,7 +43,7 @@ curl -L -o "$DEVKIT_FILE" "$DEVKIT_URL"
 mkdir -p devkit && tar -xJvf "$DEVKIT_FILE" -C devkit
 
 # Clone and install Frida Python
-git clone -b "17.0.7" --depth 1 https://github.com/frida/frida-python.git
+git clone -b 17.0.7 --depth 1 https://github.com/frida/frida-python.git
 
 # fix setup.py
 cd frida-python
