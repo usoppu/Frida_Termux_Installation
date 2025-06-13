@@ -29,8 +29,8 @@ jobs:
 
     - name: add ANDROID_NDK_ROOT to environment
       run: |
-        echo "ANDROID_NDK_ROOT=${{ steps.setup-ndk.outputs.ndk-path }}" >> $GITHUB_ENV
-        echo "ANDROID_NDK_HOME=${{ steps.setup-ndk.outputs.ndk-path }}" >> $GITHUB_ENV
+        echo "ANDROID_NDK_ROOT=${{ steps.setup-ndk.outputs.ndk-path }}" >> "$GITHUB_ENV"
+        echo "ANDROID_NDK_HOME=${{ steps.setup-ndk.outputs.ndk-path }}" >> "$GITHUB_ENV"
 
     - name: Create temp release
       run: |
@@ -39,7 +39,8 @@ jobs:
     - name: Get latest FRIDA_VERSION from Release
       id: get_frida_version
       run: |
-         echo "FRIDA_VERSION=$(curl -s https://api.github.com/repos/frida/frida/releases/latest | jq -r .tag_name)" >> $GITHUB_OUTPUT
+         echo "FRIDA_VERSION=$(curl -s https://api.github.com/repos/frida/frida/releases/latest | jq -r .tag_name)" >> "$GITHUB_OUTPUT"
+         echo "${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
 
     - name: Clone frida repository
       shell: bash
@@ -93,7 +94,7 @@ jobs:
     - name: Create release frida ${{ matrix.arch }}
       uses: ncipollo/release-action@main
       with:
-        tag: ${{ steps.get_frida_version.outputs.FRIDA_VERSION }}
+        tag: "${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
         name: "Frida ${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
         allowUpdates: true
         artifacts: release-assets/*
