@@ -35,16 +35,17 @@ jobs:
     - name: Create temp release
       run: |
         mkdir release-assets
+        sudo apt-get install jq -y
 
     - name: Get latest FRIDA_VERSION from Release
       id: get_frida_version
       run: |
-         echo "FRIDA_VERSION=$(curl -s https://api.github.com/repos/frida/frida/releases/latest | jq -r .tag_name)" >> "$GITHUB_OUTPUT"
-         echo "${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
+       echo "${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
 
     - name: Clone frida repository
       shell: bash
       run: |
+        echo "${{ steps.get_frida_version.outputs.FRIDA_VERSION }}"
         git clone --recurse-submodules https://github.com/frida/frida
 
     - name: Configure
