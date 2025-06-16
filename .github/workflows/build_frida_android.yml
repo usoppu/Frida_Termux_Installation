@@ -39,7 +39,6 @@ jobs:
     - name: Create temp release
       run: |
         mkdir release-assets
-        sudo apt-get install jq -y
 
     - name: Clone frida repository
       shell: bash
