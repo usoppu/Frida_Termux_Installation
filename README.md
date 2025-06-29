@@ -11,9 +11,14 @@ cd $TMPDIR && wget https://raw.githubusercontent.com/usoppu/Frida_Termux_Install
 ```
 ## Installing dependancies
 ```
-apt install colorama prompt_toolkit pygments
+apt install colorama prompt_toolkit pygments tsu
 ```
-## add export for su user
+## test
+```
+tsu
+frida Termux
+```
+## maybe not this ------------- add export for su user
 ```
 su
 export PATH="$HOME/data/data/com.termux/files/usr/bin:$PATH"
