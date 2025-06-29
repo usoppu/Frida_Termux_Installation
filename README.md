@@ -11,21 +11,23 @@ cd $TMPDIR && wget https://raw.githubusercontent.com/usoppu/Frida_Termux_Install
 ```
 ## Installing dependancies
 ```
-apt install colorama prompt_toolkit pygments tsu android-tools
+pip install colorama prompt_toolkit pygments
 ```
 ## test
 ```
-tsu
-frida Termux
-frida -f com.color.block.jam3d.candy.jelly -l /sdcard/Download/blockout.js //failed
-frida 'Block Out Master: Color Jam 3d' -l /sdcard/Download/blockout.js
-sudo frida -f com.fc.bus.away.traffic.jam -l /sdcard/Download/traffic.js
+//frida Termux
+//frida -f com.color.block.jam3d.candy.jelly -l /sdcard/Download/blockout.js //failed
+sudo frida 'Block Out Master: Color Jam 3d' -l /sdcard/Download/blockout.js //winner works
+sudo frida -f com.fc.bus.away.traffic.jam -l /sdcard/Download/traffic.js //nop
+sudo frida -f "Traffic Escape!" -l /sdcard/Download/traffic.js
 ```
 ## maybe not this ------------- add export for su user
 ```
 su
 export PATH="$HOME/data/data/com.termux/files/usr/bin:$PATH"
 frida --version
+
+pkg install tsu android-tools
 ```
 # Credits
 - [frida](https://github.com/frida/frida) : Official Frida Repository
