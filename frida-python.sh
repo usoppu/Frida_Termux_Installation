@@ -36,7 +36,7 @@ FRIDA_VERSION=16.7.19
 
 # Download Frida devkit
 #           https://github.com/Alexjr2/Frida_Termux_Installation/releases/download/16.7.9/frida-gum-devkit-android-x86.tar.xz
-DEVKIT_URL="https://github.com/Alexjr2/Frida_Termux_Installation/releases//download/16.7.9/frida-core-devkit-android-$arch.tar.xz"
+DEVKIT_URL="https://github.com/usoppu/Frida_Termux_Installation/releases/download/16.7.9/frida-core-devkit-android-$arch.tar.xz"
 DEVKIT_FILE="frida-core-devkit-android-$arch.tar.xz"
 
 curl -L -o "$DEVKIT_FILE" "$DEVKIT_URL"
@@ -49,7 +49,8 @@ git clone -b 16.7.19 --depth 1 https://github.com/frida/frida-python.git
 
 # fix setup.py
 cd frida-python
-curl -LO https://raw.githubusercontent.com/Alexjr2/Frida_Termux_Installation/refs/heads/main/frida-python.patch
+# https://raw.githubusercontent.com/Alexjr2/Frida_Termux_Installation/refs/heads/main/frida-python.patch
+curl -LO https://raw.githubusercontent.com/usoppu/Frida_Termux_Installation/refs/heads/main/frida-python.patch
 patch -p1 < frida-python.patch
 
 #install frida-python
