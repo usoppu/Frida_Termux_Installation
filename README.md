@@ -21,12 +21,8 @@ sudo frida 'Block Out Master: Color Jam 3d' -l /sdcard/Download/blockout.js //wi
 sudo frida -f com.fc.bus.away.traffic.jam -l /sdcard/Download/traffic.js //nop
 sudo frida -f "Traffic Escape!" -l /sdcard/Download/traffic.js
 ```
-## maybe not this ------------- add export for su user
+## additional unnecessaries
 ```
-su
-export PATH="$HOME/data/data/com.termux/files/usr/bin:$PATH"
-frida --version
-
 pkg install tsu android-tools
 ```
 # Credits
