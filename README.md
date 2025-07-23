@@ -16,16 +16,33 @@ pip install colorama prompt_toolkit pygments
 ```
 ## test
 ```
-//frida Termux
-//frida -f com.color.block.jam3d.candy.jelly -l /sdcard/Download/blockout.js //failed
+//frida Termux works
 sudo frida 'Block Out Master: Color Jam 3d' -l /sdcard/Download/blockout.js //winner works
+
+doesnt work:
+//frida -f com.color.block.jam3d.candy.jelly -l /sdcard/Download/blockout.js //failed
 sudo frida -f com.fc.bus.away.traffic.jam -l /sdcard/Download/traffic.js //nop
 sudo frida -f "Traffic Escape!" -l /sdcard/Download/traffic.js
 ```
-## additional unnecessaries
+## additional unnecessaries. tsu for sudo?
 ```
 pkg install tsu android-tools
 ```
+## Check if USAP pool is enabled and try disabling:
+```
+getprop | grep usap
+setprop persist.device_config.runtime_native.usap_pool_enabled false
+```
+## also try (taba7lite needed this)
+```
+setenforce 0
+```
+
+## run with
+```
+setenforce 0
+```
+
 # Credits
 - [frida](https://github.com/frida/frida) : Official Frida Repository
 - [frida-python](https://github.com/frida/frida-python.git) : For frida-python installation and script
