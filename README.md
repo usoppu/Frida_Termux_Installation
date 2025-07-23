@@ -1,5 +1,6 @@
 > [!NOTE]
-> Only For Termux User (Android) support arm, arm64, x86 and x86_64
+> Only For Termux User (Android) support arm64
+> Frida version specifically 16.7.19
 
 ## Installing Python
 ```bash
