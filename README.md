@@ -38,11 +38,6 @@ setprop persist.device_config.runtime_native.usap_pool_enabled false
 setenforce 0
 ```
 
-## run with
-```
-setenforce 0
-```
-
 # Credits
 - [frida](https://github.com/frida/frida) : Official Frida Repository
 - [frida-python](https://github.com/frida/frida-python.git) : For frida-python installation and script
